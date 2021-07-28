@@ -1,0 +1,18 @@
+rescript = 1
+rule cp
+  command = cmd.exe /C copy /Y $i $out >NUL
+rule touch
+ command = cmd.exe /C type nul >>$out & copy $out+,, >NUL
+o Task.cmi : cp ..\bs\src\core\utils\Task.cmi
+o Task.cmj : cp ..\bs\src\core\utils\Task.cmj
+o Task.cmt : cp ..\bs\src\core\utils\Task.cmt
+o Task.res : cp ..\..\src\core\utils\Task.res
+o Task.resi : cp ..\..\src\core\utils\Task.resi
+o Task.cmti : cp ..\bs\src\core\utils\Task.cmti
+o TaskResult.cmi : cp ..\bs\src\core\utils\TaskResult.cmi
+o TaskResult.cmj : cp ..\bs\src\core\utils\TaskResult.cmj
+o TaskResult.cmt : cp ..\bs\src\core\utils\TaskResult.cmt
+o TaskResult.res : cp ..\..\src\core\utils\TaskResult.res
+o TaskResult.resi : cp ..\..\src\core\utils\TaskResult.resi
+o TaskResult.cmti : cp ..\bs\src\core\utils\TaskResult.cmti
+build install.stamp : touch Task.cmi Task.cmj TaskResult.cmi TaskResult.cmj 

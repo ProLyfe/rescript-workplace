@@ -1,0 +1,9 @@
+####{BSB GENERATED: NO EDIT
+FLG -ppx "C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\win32\bsc.exe -as-ppx "
+S C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\lib\ocaml
+B C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\lib\ocaml
+FLG -open Belt
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S src\core\utils
+B lib\bs\src\core\utils
+####BSB GENERATED: NO EDIT}

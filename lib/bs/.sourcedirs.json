@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" , "src\\routes" , "src\\routes\\example" , "src\\plugins" , "src\\core" , "src\\core\\utils" ] , "pkgs" : [ [ "gentype" , "C:\\Users\\Rayane\\Desktop\\ReScript\\res-ts-fast\\node_modules\\gentype" ] , [ "@rescript\\std" , "C:\\Users\\Rayane\\Desktop\\ReScript\\res-ts-fast\\node_modules\\@rescript\\std" ] ] , "generated" : [] }
