@@ -19,6 +19,10 @@ const root: FastifyPluginAsync = async (fastify, opts): Promise<void> => {
     console.log(todos);
     reply.send(books);
   });
+
+  fastify.get('/placeholder', async (request, reply) => {
+        
+  })
   
 };
 

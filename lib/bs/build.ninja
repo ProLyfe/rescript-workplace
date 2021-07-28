@@ -2,10 +2,17 @@ rescript = 1
 cleaner = C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\gentype\gentype.exe
 rule astj
   command = "C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\win32\bsc.exe"  -bs-v 9.1.4 -open Belt -absname -bs-ast -o $out $i
-o src\core\utils\Task.ast : astj ..\..\src\core\utils\Task.res
+o src\core\Pratique.ast : astj ..\..\src\core\Pratique.res
 rule deps
-  command = "C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\win32\bsb_helper.exe" -hash 49d4624e7382eb5ec21326af21d17039 $in
+  command = "C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\win32\bsb_helper.exe" -hash 7755f975de1d0fc3c311af192515dd3e $in
   restat = 1
+o src\core\Pratique.d : deps src\core\Pratique.ast
+rule mij
+  command = "C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\rescript\win32\bsc.exe" -I "src\core\utils" -I "src\core" -I "src\plugins" -I "src\routes\example" -I "src\routes" -I src -open Belt  -bs-gentype C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\gentype\gentype.exe -bs-package-name res-ts-fast -bs-package-output es6:$in_d:.bs.js -runtime C:\Users\Rayane\Desktop\ReScript\res-ts-fast\node_modules\@rescript\std $i
+  dyndep = 1
+  restat = 1
+o src\core\Pratique.cmj src\core\Pratique.cmi ..\..\src\core\Pratique.bs.js : mij src\core\Pratique.ast
+o src\core\utils\Task.ast : astj ..\..\src\core\utils\Task.res
 o src\core\utils\Task.d : deps src\core\utils\Task.ast src\core\utils\Task.iast
 o src\core\utils\Task.iast : astj ..\..\src\core\utils\Task.resi
 rule mi

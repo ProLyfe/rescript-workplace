@@ -3,6 +3,10 @@ rule cp
   command = cmd.exe /C copy /Y $i $out >NUL
 rule touch
  command = cmd.exe /C type nul >>$out & copy $out+,, >NUL
+o Pratique.cmi : cp ..\bs\src\core\Pratique.cmi
+o Pratique.cmj : cp ..\bs\src\core\Pratique.cmj
+o Pratique.cmt : cp ..\bs\src\core\Pratique.cmt
+o Pratique.res : cp ..\..\src\core\Pratique.res
 o Task.cmi : cp ..\bs\src\core\utils\Task.cmi
 o Task.cmj : cp ..\bs\src\core\utils\Task.cmj
 o Task.cmt : cp ..\bs\src\core\utils\Task.cmt
@@ -15,4 +19,4 @@ o TaskResult.cmt : cp ..\bs\src\core\utils\TaskResult.cmt
 o TaskResult.res : cp ..\..\src\core\utils\TaskResult.res
 o TaskResult.resi : cp ..\..\src\core\utils\TaskResult.resi
 o TaskResult.cmti : cp ..\bs\src\core\utils\TaskResult.cmti
-build install.stamp : touch Task.cmi Task.cmj TaskResult.cmi TaskResult.cmj 
+build install.stamp : touch Pratique.cmi Pratique.cmj Task.cmi Task.cmj TaskResult.cmi TaskResult.cmj 

@@ -1,5 +1,6 @@
 {
   "name": "res-ts-fast",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
